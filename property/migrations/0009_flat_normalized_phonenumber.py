@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='flat',
-            name='normalized_phonenumber',
+            name='owner_pure_phone',
             field=phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=128, region=None, verbose_name='Нормализованный номер владельца'),
         ),
     ]
