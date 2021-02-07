@@ -38,6 +38,9 @@ class Complaint(models.Model):
                              verbose_name="Квартира, на которую пожаловались")
     message = models.TextField("Сообщение")
 
+    def __str__(self):
+        return f"{self.flat.address} - {self.user.username}"
+
 
 class Owner(models.Model):
     name = models.CharField("ФИО владельца", max_length=200, db_index=True)
