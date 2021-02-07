@@ -30,6 +30,10 @@ class Flat(models.Model):
     def __str__(self):
         return f"{self.town}, {self.address} ({self.price}р.)"
 
+    class Meta:
+        verbose_name = "квартира"
+        verbose_name_plural = "квартиры"
+
 
 class Complaint(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
@@ -40,6 +44,10 @@ class Complaint(models.Model):
 
     def __str__(self):
         return f"{self.flat.address} - {self.user.username}"
+
+    class Meta:
+        verbose_name = "жалоба"
+        verbose_name_plural = "жалобы"
 
 
 class Owner(models.Model):
@@ -55,3 +63,7 @@ class Owner(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "владелец"
+        verbose_name_plural = "владельцы"
