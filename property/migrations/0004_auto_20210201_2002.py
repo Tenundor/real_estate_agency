@@ -7,10 +7,7 @@ def define_new_buildings(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
     year_new_building = 2015
     for flat in Flat.objects.all():
-        if flat.construction_year < year_new_building:
-            flat.new_building = False
-        else:
-            flat.new_building = True
+        flat.new_building = flat.construction_year >= year_new_building
         flat.save()
 
 
